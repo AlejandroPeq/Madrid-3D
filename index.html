@@ -142,6 +142,7 @@
     </div>
   </div>
 
+  <!-- Cabecera -->
   <header class="app-header navbar">
     <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">☰</button>
     <a class="navbar-brand" href="#"></a>
@@ -172,6 +173,8 @@
 
     </ul>
   </header>
+
+  <!-- Sidebar -->
 
   <div class="app-body">
     <div class="sidebar">
@@ -236,7 +239,8 @@
       </nav>
     </div>
 
-    <!-- Main content -->
+    <!-- Contenido Central -->
+ 
     <main class="main">
       <!-- Breadcrumb -->
 
@@ -261,6 +265,9 @@
 
 
     </main>
+
+
+    <!-- Panel Herramientas -->
 
     <aside class="aside-menu">
       <ul style="padding-right:0px;" class="nav nav-tabs col-12" role="tablist">
@@ -979,7 +986,7 @@
 </body>
 
 
-<!-- Bootstrap and necessary plugins -->
+<!-- Bootstrap y librerías -->
 <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -995,6 +1002,8 @@
     width: 100%;
   }
 </style>
+
+<!-- ArcGIS API -->
 
 <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
 
@@ -1326,6 +1335,8 @@
       cargarGraficos();
 
     });
+
+    // Renderizado Farbtastic
 
     $('#botonRenderizarEdificios').on('click', function() {
 
@@ -3279,6 +3290,8 @@
     }, 1000);
 
 
+    // Widgets ArcGIS
+
     var homeBtn = new Home({
       view: view
     });
@@ -3448,7 +3461,7 @@
 
 
 
-
+    // Filtros Ion Range Slider
 
 
     $(function() {
