@@ -1,0 +1,3665 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Catálogo de Servicios Castilla-La Mancha">
+  <meta name="author" content="Esri España Soluciones Geoespaciales">
+  <meta name="keyword" content="Catálogo de Servicios Castilla-La Mancha">
+  <!--<link rel="shortcut icon" href="img/favicon.png">-->
+
+  <title>Madrid 3D</title>
+
+  <!-- Icons -->
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/simple-line-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <!-- Main styles for this application -->
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+  <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+  <link rel="stylesheet" href="js/farbtastic/farbtastic.css" type="text/css" />
+
+  <style>
+    .form-group select:hover {
+
+      cursor: pointer;
+    }
+
+    #lLoadingImage {
+
+      text-align: center;
+    }
+
+    #lLoadingImageService {
+      text-align: center;
+    }
+
+    .btn-primary {
+
+      border-radius: 0px;
+      color: #fff;
+      background-color: #002850;
+      border-color: #002850;
+    }
+
+    .btn-secondary {
+      border-radius: 0px;
+    }
+
+    .btn-info {
+      border-radius: 0px;
+    }
+
+    .nav-dropdown-items .nav-link {
+
+      font-size: 11px;
+    }
+
+    .nav-dropdown-items .nav-item {
+
+      background-color: rgba(113, 113, 113, 0.35);
+    }
+
+    .avatar {
+      cursor: pointer;
+    }
+
+    .contenidoListado {
+      cursor: pointer;
+    }
+
+    .message {
+      cursor: pointer;
+    }
+
+    .bg-primary {
+      background-color: #263238 !important;
+    }
+
+    .text-primary {
+      color: #263238 !important;
+    }
+
+    .switch-success>.switch-input:checked~.switch-label {
+      background: #263238 !important;
+      border-color: #263238;
+    }
+  </style>
+
+
+
+  <style>
+    .container {
+      padding: 1em;
+    }
+
+    input {
+      width: 75%;
+    }
+
+    .modal-content {
+      border-radius: 0px;
+    }
+  </style>
+
+
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" style="overflow: hidden;">
+  <div id="loadingPage" style="height:100vh;position:relative;width:100%;z-index:1050;background-color:white;">
+
+    <img style="position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:20%; width:30%;" src="img/esriLogo.png" alt="">
+    <img style="position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;" src="https://doc24.vn/img/indicator.gif?1493858651" alt="">
+
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content" style="text-align:center;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Madrid 3D</h4>
+        </div>
+        <div class="modal-body">
+          <img style="width:100%;" src="img/capturaApp.png" alt=""></img>
+          <br><br>
+          <p>En esta aplicación encontrarás todos los eventos en los próximos 100 días. El servicio que proporciona dicha información procede del portal de datos abiertos del Ayuntamiento y su actualización viene categoriazada como en tiempo real.</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar ventana emergente</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <header class="app-header navbar">
+    <button class="navbar-toggler mobile-sidebar-toggler d-lg-none" type="button">☰</button>
+    <a class="navbar-brand" href="#"></a>
+    <ul class="nav navbar-nav d-md-down-none">
+      <li class="nav-item" id="menuIzquierdo">
+        <a class="nav-link navbar-toggler sidebar-toggler" href="#">☰</a>
+      </li>
+
+      <li class="nav-item px-3" id="videoPopup">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-video-camera"></i> Madrid Comunicada</a>
+      </li>
+
+
+
+
+
+    </ul>
+
+
+    <ul class="nav navbar-nav ml-auto">
+
+      <li class="nav-item d-md-down-none">
+
+        <a class="nav-link navbar-toggler aside-menu-toggler" href="#">  <img width="30px;" src="https://s-media-cache-ak0.pinimg.com/originals/25/ef/28/25ef280441ad6d3a5ccf89960b4e95eb.gif" alt=""></a>
+
+        <!--<a class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-cog" aria-hidden="true"></i></a>-->
+      </li>
+
+    </ul>
+  </header>
+
+  <div class="app-body">
+    <div class="sidebar">
+      <nav class="sidebar-nav">
+        <ul style="margin-top:20px;" class="nav">
+
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-dot-circle-o"></i> Aplicación</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"><i class="fa fa-dot-circle-o"></i> Font Awesome</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item nav-dropdown open">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-dot-circle-o"></i> Transportes</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Paradas de Metro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Paradas de Autobús</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Paradas de Bicicleta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Bases BiciMadrid</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Aparcamientos Disuasorios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Paradas de Taxi</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"> Gasolineras</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item nav-dropdown">
+            <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-dot-circle-o"></i> Enlaces de Interés</a>
+            <ul class="nav-dropdown-items">
+              <li class="nav-item">
+                <a class="nav-link" href="icons-font-awesome.html"><i class="fa fa-dot-circle-o"></i> Font Awesome</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a style="font-size: 0.875rem;border-radius: 0px;" class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-dot-circle-o"></i> Ayuda</a>
+          </li>
+
+          <li class="nav-item">
+            <a style="font-size: 0.875rem;border-radius: 0px;" class="nav-link navbar-toggler aside-menu-toggler" href="#"><i class="fa fa-dot-circle-o"></i> Contactar</a>
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Breadcrumb -->
+
+
+
+      <ol class="breadcrumb" style="margin-bottom:0px;">
+        <li class="breadcrumb-item">Bootstrap 4 | Farbtastic | ION.Range Slider</li>
+        <li class="breadcrumb-item"><a href="#">ArcGIS JavaScript</a></li>
+        <li class="breadcrumb-item active">4.5</li>
+        <!-- Breadcrumb Menu-->
+
+        <style>
+          .esri-search {
+            margin-top: 5px;
+          }
+        </style>
+        <li class="breadcrumb-menu" id="barraSuperior">
+
+        </li>
+      </ol>
+      <div id="viewDiv"></div>
+
+
+    </main>
+
+    <aside class="aside-menu">
+      <ul style="padding-right:0px;" class="nav nav-tabs col-12" role="tablist">
+        <li id="listadoRefresh" style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link active" data-toggle="tab" href="#timeline" role="tab"><i class="fa fa-list-ul"></i></a>
+        </li>
+        <li style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link" data-toggle="tab" href="#listadoFiltros" role="tab"><i class="fa fa-filter"></i></a>
+        </li>
+        <li style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link" data-toggle="tab" href="#settings" role="tab"><i class="fa fa-bar-chart"></i></a>
+        </li>
+        <li style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link" data-toggle="tab" href="#baseMaps" role="tab"><span class="esri-icon-basemap"></span></a>
+        </li>
+        <li style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link" data-toggle="tab" href="#legend" role="tab"><span class="esri-icon-globe"></span></a>
+        </li>
+        <li style="padding-left:0px; padding-right:0px;" class="nav-item col-2">
+          <a style="text-align:center;border-radius: 0px;" class="nav-link" data-toggle="tab" href="#visible" role="tab"><span class="esri-icon-layers"></span></a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane active" id="timeline" role="tabpanel" style="padding: 15px;">
+
+          <div>
+            <h6>Listado Eventos</h6>
+            <select class="form-control col-12" id="selectTipo" style="border-radius: 0 !important;">
+            </select>
+            <div class="input-group input-group-sm">
+
+
+              <div class="input-group " style="padding:0px;">
+                <span class="input-group-addon" id="sizing-addon3" style=" border-radius: 0 !important;   background-color: transparent;"><i class="fa fa-search"></i></span>
+
+                <input style="margin-top:0px;" type="text" id="myInput" onkeyup="myFunction()" placeholder="Filtrar entradas.." class="form-control">
+
+              </div>
+
+            </div>
+
+            <hr>
+          </div>
+
+
+
+          <div id="myUL">
+            <div id="listadoEventos"></div>
+          </div>
+
+        </div>
+
+        <div class="tab-pane p-3" id="listadoFiltros" role="tabpanel">
+
+          <h6>Filtros</h6>
+
+          <hr>
+
+          <div id="FiltroParadasMetro">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/metro.png" alt="">
+                <label for="exampleSelect1">Paradas Metro</label>
+
+              </div>
+
+
+
+              <div>
+                <input type="text" id="range" value="" name="range" />
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroParadasAutobus">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/paradasBus.png" alt="">
+                <label for="exampleSelect1">Paradas Autobús</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+              <div>
+                <input type="text" id="range2" value="" name="range2" />
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroParadasTaxi">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/paradasTaxi.png" alt="">
+                <label for="exampleSelect1">Paradas Taxi</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputTaxis" style="margin-top:0px;" type="text" placeholder="Palabra clave a filtrar.." class="form-control">
+                  <span class="input-group-addon" id="buttonFiltroTaxis" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+              <div>
+                <input type="text" id="range3" value="" name="range3" />
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroParadasRenfe">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/paradasRenfe.png" alt="">
+                <label for="exampleSelect1">Paradas Renfe</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroParadasMetroLigero">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/paradasMetroLigero.png" alt="">
+                <label for="exampleSelect1">Paradas Metro Ligero</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroPoliciaMunicipal">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/policiaMunicipal.png" alt="">
+                <label for="exampleSelect1">Policía Municipal</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroMuseos">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/museos.png" alt="">
+                <label for="exampleSelect1">Museos</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroAparcamientosDisuasion">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/parkingDisuasorio.png" alt="">
+                <label for="exampleSelect1">Aparcamientos Disuasion</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroBasesBicicletas">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/bases.png" alt="">
+                <label for="exampleSelect1">Bases Bicicletas</label>
+                <!--<div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>-->
+              </div>
+
+              <div>
+                <input type="text" id="rangeBaseBicicletas" value="" name="rangeBaseBicicletas" />
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroAparcaBicicletas">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/aparcabicis.png" alt="">
+                <label for="exampleSelect1">Aparca Bicicletas</label>
+
+              </div>
+
+              <div>
+                <input type="text" id="rangeAparcaBicicletasArcos" value="" name="rangeAparcaBicicletasArcos" />
+              </div>
+              <br>
+
+              <div>
+                <input type="text" id="rangeAparcaBicicletas" value="" name="rangeAparcaBicicletas" />
+              </div>
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroCentrosREB">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/centrosREB.png" alt="">
+                <label for="exampleSelect1">Centros REB</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputPisos" style="margin-top:0px;" type="text" placeholder="Número de pisos.." class="form-control">
+                  <span class="input-group-addon" id="buttonPisos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroCentrosEducativos">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/educacion.png" alt="">
+                <label for="exampleSelect1">Centros Educativos</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputCentrosEducativos" style="margin-top:0px;" type="text" placeholder="Palabra clave a filtrar.." class="form-control">
+                  <span class="input-group-addon" id="buttonFiltroCentrosEducativos" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroCentrosEducativosUniversitarios">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/educacionUniversitaria.png" alt="">
+                <label for="exampleSelect1">Centros Educativos Universitarios</label>
+                <div class="input-group input-group-sm">
+
+                  <input id="inputCentrosEducativosUniversitarios" style="margin-top:0px;" type="text" placeholder="Palabra clave a filtrar.." class="form-control">
+                  <span class="input-group-addon" id="buttonFiltroCentrosEducativosUniversitarios" style="background-color: #263238;"><i style="color:white;" class="fa fa-filter"></i></span>
+                </div>
+              </div>
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+          <div id="FiltroEdificios">
+
+            <form>
+
+              <div class="form-group">
+                <img style="width: 25px; margin-bottom: 3px;" src="img/edificios3dgradiente.png" alt="">
+                <label for="exampleSelect1">Edificios 3D</label>
+                <br><br>
+                <div>
+                  <input type="text" id="rangeEdificios" value="" name="range" />
+                </div>
+                <br>
+
+                <ul class="nav nav-tabs" role="tablist" style="height: 35px;">
+                  <li class="nav-item" style="width: 50%;">
+                    <a class="nav-link active" data-toggle="tab" href="#home" role="tab" style="padding:8px;">Color Inicial <input style="width: 10px;float: right;height: 20px;" type="text" id="colorAux" name="colorAux" class="form-control" /></a>
+                  </li>
+                  <li class="nav-item" style="width: 50%;">
+                    <a class="nav-link" data-toggle="tab" href="#profile" role="tab" style="padding:8px;">Color Final <input style="width: 10px;float: right;height: 20px;" type="text" id="colorAux2" name="colorAux" class="form-control" /></a>
+                  </li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" style="height: auto;">
+                  <div class="tab-pane active" id="home" role="tabpanel">
+                    <br>
+                    <div style="margin-left:auto; margin-right:auto;" id="colorpicker"></div>
+                    <br>
+                    <input type="text" id="color" name="color" value="#72b6ee" class="form-control" />
+
+                  </div>
+                  <div class="tab-pane" id="profile" role="tabpanel">
+                    <br>
+                    <div style="margin-left:auto; margin-right:auto;" id="colorpicker2"></div>
+                    <br>
+                    <input type="text" id="color2" name="color2" value="#e6eeef" class="form-control" />
+
+                  </div>
+                </div>
+
+                <div class="input-group input-group-sm">
+                  <button id="botonRenderizarEdificios" style="background-color: #263238;" type="button" class="btn btn-block text-white"><i class="fa fa-paint-brush"></i> Renderizar Edificios</button>
+                </div>
+              </div>
+
+
+
+            </form>
+
+            <hr>
+
+          </div>
+
+
+
+
+
+        </div>
+
+        <style>
+          small.text-muted {
+            font-size: 10px;
+          }
+        </style>
+        <div class="tab-pane p-3" id="settings" role="tabpanel">
+
+          <h6>Gráficos</h6>
+
+          <hr>
+
+          <div id="ParadasMetro">
+            <div class="card card-inverse card-primary" style="background-color: #263238; border-color:#263238;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-subway"></i>
+                </div>
+                <div id="cantidadParadasMetro" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Paradas Metro</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="ParadasTaxi">
+
+            <div class="card card-inverse card-success" style="background-color: #b0bec5; border-color:#b0bec5;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-taxi"></i>
+                </div>
+                <div id="cantidadParadasTaxi" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Paradas Taxi</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="ParadasAutobus">
+            <div class="card card-inverse card-warning" style="background-color: #4a494b; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-bus"></i>
+                </div>
+                <div id="cantidadParadasAutobus" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Paradas Autobus</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="ParadasRenfe">
+            <div class="card card-inverse card-warning" style="background-color: #6a686b; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-subway"></i>
+                </div>
+                <div id="cantidadParadasRenfe" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Paradas Renfe</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="ParadasMetroLigero">
+            <div class="card card-inverse card-warning" style="background-color: #514a55; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-subway"></i>
+                </div>
+                <div id="cantidadParadasMetroLigero" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Paradas Metro Ligero</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="PoliciaMunicipal">
+            <div class="card card-inverse card-warning" style="background-color: #2a3538; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-shield"></i>
+                </div>
+                <div id="cantidadPoliciaMunicipal" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Policía Municipal</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="Museos">
+            <div class="card card-inverse card-warning" style="background-color: #382d2a; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-university"></i>
+                </div>
+                <div id="cantidadMuseos" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Museos</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="AparcamientosDisuasion">
+            <div class="card card-inverse card-warning" style="background-color: #263140; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-product-hunt"></i>
+                </div>
+                <div id="cantidadAparcamientosDisuasion" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Aparcamientos Disuasion</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="AparcaBicicletas">
+            <div class="card card-inverse card-warning" style="background-color: #211616; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-bicycle"></i>
+                </div>
+                <div id="cantidadAparcaBicicletas" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Aparcamientos Bicicletas</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="BasesBicicletas">
+            <div class="card card-inverse card-warning" style="background-color: #4a494b; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-bicycle"></i>
+                </div>
+                <div id="cantidadBasesBicicletas" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Bases Bicicletas</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="CentrosREB">
+            <div class="card card-inverse card-warning" style="background-color: #4a494b; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-bicycle"></i>
+                </div>
+                <div id="cantidadCentrosREB" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Centros REB</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="CentrosEducativos">
+            <div class="card card-inverse card-warning" style="background-color: #716876; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-pencil"></i>
+                </div>
+                <div id="cantidadCentrosEducativos" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Centros Educativos</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+          <div id="CentrosEducativosUniversitarios">
+            <div class="card card-inverse card-warning" style="background-color: #382e37; border-color:#4a494b;">
+              <div class="card-block">
+                <div class="h1 text-muted text-right mb-4">
+                  <i class="fa fa-graduation-cap"></i>
+                </div>
+                <div id="cantidadCentrosEducativosUniversitarios" class="h4 mb-0"></div>
+                <small class="text-muted text-uppercase font-weight-bold">Centros Educativos Universitarios</small>
+                <div class="progress progress-white progress-xs mt-3">
+                  <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+          </div>
+
+
+
+
+        </div>
+
+        <div class="tab-pane p-3" id="baseMaps" role="tabpanel" style="max-height:none;width: 100%;">
+          <h6>Mapas Base</h6>
+
+          <hr>
+
+        </div>
+
+        <style>
+          .esri-legend__layer-cell--info {
+
+            font-size: 10px!important;
+          }
+        </style>
+        <div class="tab-pane p-3" id="legend" role="tabpanel" style="max-height:none;">
+          <h6>Leyenda</h6>
+
+          <hr>
+
+        </div>
+
+        <div class="tab-pane p-3" id="visible" role="tabpanel" style=" max-height:none;width: 100%;height:100%;">
+          <h6>Features</h6>
+
+          <hr>
+
+        </div>
+
+
+
+      </div>
+    </aside>
+
+  </div>
+
+  <footer class="app-footer">
+    <a href="#">Actividades y Eventos Ayuntamiento de Madrid</a> © <span id="year"></span> Esri España.
+    <span class="float-right">Powered by <a href="http://www.esri.es" target="_blank">Esri España</a>
+          </span>
+  </footer>
+
+
+</body>
+
+
+<!-- Bootstrap and necessary plugins -->
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
+<script src="js/ion.rangeSlider.js"></script>
+<script type="text/javascript" src="js/farbtastic/farbtastic.js"></script>
+
+
+<style>
+  #viewDiv {
+    padding: 0px;
+    height: 90vh;
+    width: 100%;
+  }
+</style>
+
+<link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+
+<script src="https://js.arcgis.com/4.5/"></script>
+
+<script>
+  require([
+    "esri/geometry/support/webMercatorUtils",
+    "esri/tasks/GeometryService",
+    "esri/tasks/support/ProjectParameters",
+    "esri/geometry/SpatialReference",
+    "esri/Map",
+    "esri/views/SceneView",
+    "esri/layers/SceneLayer",
+    "esri/layers/GroupLayer",
+    "esri/WebScene",
+    "esri/symbols/SimpleFillSymbol",
+    "esri/geometry/Point",
+    "esri/layers/FeatureLayer",
+    "esri/renderers/SimpleRenderer",
+    "esri/symbols/MeshSymbol3D",
+    "esri/symbols/SimpleMarkerSymbol",
+    "esri/renderers/UniqueValueRenderer",
+    "esri/symbols/PointSymbol3D",
+    "esri/symbols/IconSymbol3DLayer",
+    "esri/symbols/LabelSymbol3D",
+    "esri/symbols/TextSymbol3DLayer",
+    "esri/symbols/callouts/LineCallout3D",
+    "esri/widgets/Home",
+    "esri/widgets/Search",
+    "esri/widgets/BasemapGallery",
+    "esri/widgets/Locate",
+    "esri/widgets/Legend",
+    "esri/widgets/Expand",
+    "esri/widgets/LayerList",
+    "esri/config",
+    "dojo/on",
+    "dojo/promise/all",
+    "dojo/domReady!"
+  ], function(webMercatorUtils, GeometryService, ProjectParameters, SpatialReference, Map, SceneView, SceneLayer, GroupLayer, WebScene, SimpleFillSymbol, Point, FeatureLayer, SimpleRenderer, MeshSymbol3D, SimpleMarkerSymbol, UniqueValueRenderer,
+    PointSymbol3D, IconSymbol3DLayer, LabelSymbol3D, TextSymbol3DLayer, LineCallout3D,
+    Home, Search, BasemapGallery, Locate, Legend, Expand, LayerList, esriConfig, on, all) {
+
+    var edificios;
+    var edificiosTransparentes;
+    var paradas;
+    var lineas;
+    var paradasAutobuses;
+    var paradasRenfe;
+    var paradasMetroLigero;
+    var policiaMunicipal;
+    var museos;
+    var aparcabicicletas;
+    var basesBicicletas;
+    var centrosREB;
+    var aparcamientosDisuasion;
+    var centrosEducativos;
+    var centrosEducativosUniversitarios;
+    var taxis;
+
+
+    var grupoParadasMetro;
+
+    var arrayCoordenadasAuxiliar = [];
+
+
+    var map = new WebScene({
+      // autocasts as esri/portal/PortalItem
+      portalItem: {
+        id: "5ba6c590a34e4e3a88faacc60a4aa468" // ID of the WebScene on arcgis.com
+      }
+    });
+
+
+
+    var view = new SceneView({
+      container: "viewDiv",
+      map: map,
+      popup: {
+        dockEnabled: true,
+        dockOptions: {
+          buttonEnabled: true,
+          breakpoint: false
+        }
+      }
+    });
+
+    map.load()
+      .then(function() {
+        // load the basemap to get its layers created
+        return map.basemap.load();
+      })
+      .then(function() {
+        // grab all the layers and load them
+        var allLayers = map.allLayers;
+        var promises = allLayers.map(function(layer) {
+          return layer.load();
+
+        });
+        return all(promises.toArray());
+      })
+      .then(function(layers) {
+        console.log(map.layers);
+        console.log("all " + layers.length + " layers loaded");
+
+      })
+      .otherwise(function(error) {
+        console.error(error);
+      });
+
+
+    view.then(function() {
+
+      edificios = map.findLayerById('15ebf61e243-layer-0');
+      edificiosTransparentes = map.findLayerById('15e3e7aa7f3-layer-0');
+      paradas = map.findLayerById('15e2d7711b6-layer-6');
+      lineas = map.findLayerById('33cbc14ea20f4237bd35545c578e7cdc');
+      taxis = map.findLayerById('578aa455438d4746af022c98e933e732');
+      paradasRenfe = map.findLayerById('15e2d89a863-layer-10');
+      paradasMetroLigero = map.findLayerById('15e2d85f4de-layer-5');
+      policiaMunicipal = map.findLayerById('15e2d7636d3-layer-1');
+      museos = map.findLayerById('15e2d755532-layer-0');
+      aparcabicicletas = map.findLayerById('d715b3d54e904310ac42eafb1da44372');
+      basesBicicletas = map.findLayerById('dfdfd56c1b8f4436b5bd20c05ca36dd1');
+      centrosREB = map.findLayerById('0192f4ba641146fd9594a7bd4914dae5');
+      aparcamientosDisuasion = map.findLayerById('181a7edffb934368990fa047805a1da7');
+      centrosEducativos = map.findLayerById('15e3a61e299-layer-0');
+      centrosEducativosUniversitarios = map.findLayerById('15e3a90698d-layer-0');
+
+      grupoParadasMetro = map.findLayerById('15e2d770ee5-layer-2');
+      grupoTaxis = map.findLayerById('02f17ee2d4c94a95b7190e8ca0c9d909');
+      grupoParadasRenfe = map.findLayerById('15e2d89a053-layer-6');
+      grupoParadasMetroLigero = map.findLayerById('15e2d85efdf-layer-0');
+      grupoBicicletas = map.findLayerById('9b818e3377c2487194d35a2b5ce82320');
+      grupoCentrosEducativos = map.findLayerById('15e3a927ad5-layer-1');
+      grupoAparcamientos = map.findLayerById('502d4633ebf74c66acbd5b6308ed2f23');
+
+
+
+      paradasAutobuses = new FeatureLayer({
+        url: "https://services5.arcgis.com/UxADft6QPcvFyDU1/ArcGIS/rest/services/M6_Red/FeatureServer/0",
+        title: "Parada de Autobuses",
+        renderer: renderizadoParadasBus,
+        popupTemplate: pTemplateAutobuses,
+        outFields: ["*"],
+        featureReduction: {
+          type: "selection"
+        },
+        labelingInfo: [{
+          labelExpressionInfo: {
+            value: "{CODIGOESTACION}"
+          },
+          symbol: new LabelSymbol3D({
+            symbolLayers: [
+              new TextSymbol3DLayer({
+                material: {
+                  color: "white"
+                },
+                // we set a halo on the font to make the labels more visible with any kind of background
+                halo: {
+                  size: 1,
+                  color: [50, 50, 50]
+                },
+                size: 10
+              })
+            ]
+          })
+        }],
+        labelsVisible: true,
+        visible: false
+      });
+
+
+      var postesAutobuses = new FeatureLayer({
+        url: "https://services5.arcgis.com/UxADft6QPcvFyDU1/ArcGIS/rest/services/M6_Red/FeatureServer/1",
+        title: "Postes de Autobuses",
+        visible: false
+      });
+
+
+      var tramosAutobuses = new FeatureLayer({
+        url: "https://services5.arcgis.com/UxADft6QPcvFyDU1/ArcGIS/rest/services/M6_Red/FeatureServer/2",
+        title: "Tramos de Autobuses",
+        visible: false
+      });
+
+      var autobuses = new GroupLayer({
+        layers: [paradasAutobuses, postesAutobuses, tramosAutobuses],
+        title: "Autobuses Urbanos",
+        visible: false
+
+      });
+      map.add(autobuses);
+
+      renderizarFeatures();
+
+      cargarValoresSelect();
+
+      $('#selectTipo').on('change', function() {
+
+
+        switch (this.value) {
+          case "paradasAutobuses":
+            realizarConsultaSimpleAutobus(paradasAutobuses);
+            break;
+          case "paradas":
+            realizarConsultaSimpleMetro(paradas);
+            break;
+          case "taxis":
+            realizarConsultaSimpleTaxi(taxis);
+            break;
+          case "paradasRenfe":
+            realizarConsultaSimpleParadasRenfe(paradasRenfe);
+            break;
+          case "paradasMetroLigero":
+            realizarConsultaSimpleParadasMetroLigero(paradasMetroLigero);
+            break;
+          case "policiaMunicipal":
+            realizarConsultaSimplePoliciaMunicipal(policiaMunicipal);
+            break;
+          case "museos":
+            realizarConsultaSimpleMuseos(museos);
+            break;
+          case "aparcamientosDisuasion":
+            realizarConsultaSimpleAparcamientosDisuasion(aparcamientosDisuasion);
+            break;
+          case "aparcabicicletas":
+            realizarConsultaSimpleAparcaBicicletas(aparcabicicletas);
+            break;
+          case "basesBicicletas":
+            realizarConsultaSimpleBasesBicicletas(basesBicicletas);
+            break;
+          case "centrosREB":
+            realizarConsultaSimpleCentrosREB(centrosREB);
+            break;
+          case "centrosEducativos":
+            realizarConsultaSimpleCentrosEducativos(centrosEducativos);
+            break;
+          case "centrosEducativosUniversitarios":
+            realizarConsultaSimpleCentrosEducativosUniversitarios(centrosEducativosUniversitarios);
+            break;
+
+
+        }
+
+      });
+
+      realizarConsultaSimpleMetro(paradas);
+      cargarGraficos();
+      cargarFiltros();
+
+      crearLeyenda();
+
+      var layerList = new LayerList({
+        view: view,
+        container: "visible"
+
+      });
+
+
+    });
+
+    $('#visible').on('click', function() {
+      eliminarValoresSelect();
+      cargarValoresSelect();
+      cargarGraficos();
+      cargarFiltros();
+    });
+
+
+    $('#listadoRefresh').on('click', function() {
+
+      var featureAux = $("#selectTipo").val();
+
+      switch (featureAux) {
+        case "paradas":
+          realizarConsultaSimpleMetro(paradas);
+          break;
+        case "paradasAutobuses":
+          realizarConsultaSimpleAutobus(paradasAutobuses);
+          break;
+        case "taxis":
+          realizarConsultaSimpleTaxi(taxis);
+          break;
+        case "paradasRenfe":
+          realizarConsultaSimpleParadasRenfe(paradasRenfe);
+          break;
+        case "paradasMetroLigero":
+          realizarConsultaSimpleParadasMetroLigero(paradasMetroLigero);
+          break;
+        case "policiaMunicipal":
+          realizarConsultaSimplePoliciaMunicipal(policiaMunicipal);
+          break;
+        case "museos":
+          realizarConsultaSimpleMuseos(museos);
+          break;
+        case "aparcamientosDisuasion":
+          realizarConsultaSimpleAparcamientosDisuasion(aparcamientosDisuasion);
+          break;
+        case "aparcabicicletas":
+          realizarConsultaSimpleAparcaBicicletas(aparcabicicletas);
+          break;
+        case "basesBicicletas":
+          realizarConsultaSimpleBasesBicicletas(basesBicicletas);
+          break;
+        case "centrosREB":
+          realizarConsultaSimpleCentrosREB(centrosREB);
+          break;
+        case "centrosEducativos":
+          realizarConsultaSimpleCentrosEducativos(centrosEducativos);
+          break;
+        case "centrosEducativosUniversitarios":
+          realizarConsultaSimpleCentrosEducativosUniversitarios(centrosEducativosUniversitarios);
+          break;
+
+
+      }
+
+    });
+
+    $('#listadoFiltros').on('click', function() {
+
+      cargarGraficos();
+
+    });
+
+    $('#settings').on('click', function() {
+
+      cargarGraficos();
+
+    });
+
+    $('#botonRenderizarEdificios').on('click', function() {
+
+      var symbol = new MeshSymbol3D();
+
+      var primerColor = $("#color").val();
+
+      var segundoColor = $("#color2").val();
+
+      if (edificios.visible){
+
+        edificios.renderer = new SimpleRenderer({
+          symbol: symbol,
+          visualVariables: [{
+            type: "color",
+            field: "Pisos",
+            stops: [{
+                value: 1,
+                color: primerColor
+              },
+              {
+                value: 30,
+                color: segundoColor
+              }
+            ]
+          }]
+        });
+
+      }
+
+      if(edificiosTransparentes.visible){
+
+        edificiosTransparentes.renderer = new SimpleRenderer({
+          symbol: symbol,
+          visualVariables: [{
+            type: "color",
+            field: "Pisos",
+            stops: [{
+                value: 1,
+                color: primerColor
+              },
+              {
+                value: 30,
+                color: segundoColor
+              }
+            ]
+          }]
+        });
+
+      }
+
+
+
+    });
+
+    $('#colorpicker').on('click', function() {
+
+      var primerColor = $("#color").val();
+      $('#colorAux').css('background-color', primerColor);
+
+    });
+
+    $('#colorpicker2').on('click', function() {
+
+      var segundoColor = $("#color2").val();
+      $('#colorAux2').css('background-color', segundoColor);
+
+    });
+
+
+    function renderizarFeatures() {
+
+      renderizarFeatureParadas(paradas);
+      renderizarFeatureRenfe(paradasRenfe);
+      renderizarFeatureTaxis(taxis);
+      renderizarFeatureParadasMetroLigero(paradasMetroLigero);
+      renderizarFeaturePoliciaMunicipal(policiaMunicipal);
+      renderizarFeatureMuseos(museos);
+      renderizarFeatureAparcaBicicletas(aparcabicicletas);
+      renderizarFeatureBasesBicicletas(basesBicicletas);
+      renderizarFeatureCentrosREB(centrosREB);
+      renderizarFeatureAparcamientosDisuasion(aparcamientosDisuasion);
+      renderizarFeatureCentrosEducativos(centrosEducativos);
+      renderizarFeatureCentrosEducativosUniversitarios(centrosEducativosUniversitarios);
+      //renderizarEdificios(edificios);
+
+    }
+
+
+
+    function eliminarValoresSelect() {
+      if (paradas.visible == false || grupoParadasMetro.visible == false)
+        $("#selectTipo option[value='paradas']").remove();
+      if (taxis.visible == false || grupoTaxis.visible == false)
+        $("#selectTipo option[value='taxis']").remove();
+      if (paradasAutobuses.visible == false)
+        $("#selectTipo option[value='paradasAutobuses']").remove();
+      if (paradasRenfe.visible == false || grupoParadasRenfe.visible == false)
+        $("#selectTipo option[value='paradasRenfe']").remove();
+      if (paradasMetroLigero.visible == false || grupoParadasMetroLigero.visible == false)
+        $("#selectTipo option[value='paradasMetroLigero']").remove();
+      if (policiaMunicipal.visible == false)
+        $("#selectTipo option[value='policiaMunicipal']").remove();
+      if (museos.visible == false)
+        $("#selectTipo option[value='museos']").remove();
+      if (aparcamientosDisuasion.visible == false || grupoAparcamientos.visible == false)
+        $("#selectTipo option[value='aparcamientosDisuasion']").remove();
+      if (aparcabicicletas.visible == false || grupoBicicletas.visible == false)
+        $("#selectTipo option[value='aparcabicicletas']").remove();
+      if (basesBicicletas.visible == false || grupoBicicletas.visible == false)
+        $("#selectTipo option[value='basesBicicletas']").remove();
+      if (centrosREB.visible == false || grupoBicicletas.visible == false)
+        $("#selectTipo option[value='centrosREB']").remove();
+      if (centrosEducativos.visible == false || grupoCentrosEducativos.visible == false)
+        $("#selectTipo option[value='centrosEducativos']").remove();
+      if (centrosEducativosUniversitarios.visible == false || grupoCentrosEducativos.visible == false)
+        $("#selectTipo option[value='centrosEducativosUniversitarios']").remove();
+    }
+
+
+    function cargarValoresSelect() {
+
+      if ((paradas.visible == true) && (grupoParadasMetro.visible == true)  && ($("#selectTipo option[value='paradas']").length == 0))
+        $("#selectTipo").append('<option value="paradas">Metro</option>');
+
+      if ((taxis.visible == true) && (grupoTaxis.visible == true) && ($("#selectTipo option[value='taxis']").length == 0))
+        $("#selectTipo").append('<option value="taxis">Taxi</option>');
+
+      if ((paradasAutobuses.visible == true) && ($("#selectTipo option[value='paradasAutobuses']").length == 0))
+        $("#selectTipo").append('<option value="paradasAutobuses">Autobús</option>');
+
+      if ((paradasRenfe.visible == true) && (grupoParadasRenfe.visible == true) && ($("#selectTipo option[value='paradasRenfe']").length == 0))
+        $("#selectTipo").append('<option value="paradasRenfe">Renfe</option>');
+
+      if ((paradasMetroLigero.visible == true) && (grupoParadasMetroLigero.visible == true) && ($("#selectTipo option[value='paradasMetroLigero']").length == 0))
+        $("#selectTipo").append('<option value="paradasMetroLigero">Metro Ligero</option>');
+
+      if ((policiaMunicipal.visible == true) && ($("#selectTipo option[value='policiaMunicipal']").length == 0))
+        $("#selectTipo").append('<option value="policiaMunicipal">Policía Municipal</option>');
+
+      if ((museos.visible == true) && ($("#selectTipo option[value='museos']").length == 0))
+        $("#selectTipo").append('<option value="museos">Museos</option>');
+
+      if ((aparcamientosDisuasion.visible == true) && (grupoAparcamientos.visible == true) && ($("#selectTipo option[value='aparcamientosDisuasion']").length == 0))
+        $("#selectTipo").append('<option value="aparcamientosDisuasion">Aparcamientos Disuasión</option>');
+
+      if ((aparcabicicletas.visible == true) && (grupoBicicletas.visible == true) && ($("#selectTipo option[value='aparcabicicletas']").length == 0))
+        $("#selectTipo").append('<option value="aparcabicicletas">Aparcamientos Bicicletas</option>');
+
+      if ((basesBicicletas.visible == true) && (grupoBicicletas.visible == true) && ($("#selectTipo option[value='basesBicicletas']").length == 0))
+        $("#selectTipo").append('<option value="basesBicicletas">Bases Bicicletas</option>');
+
+      if ((centrosREB.visible == true) && (grupoBicicletas.visible == true) && ($("#selectTipo option[value='centrosREB']").length == 0))
+        $("#selectTipo").append('<option value="centrosREB">Centros REB</option>');
+
+      if ((centrosEducativos.visible == true) && (grupoCentrosEducativos.visible == true) && ($("#selectTipo option[value='centrosEducativos']").length == 0))
+        $("#selectTipo").append('<option value="centrosEducativos">Centros Educativos</option>');
+
+      if ((centrosEducativosUniversitarios.visible == true) && (grupoCentrosEducativos.visible == true) && ($("#selectTipo option[value='centrosEducativosUniversitarios']").length == 0))
+        $("#selectTipo").append('<option value="centrosEducativosUniversitarios">Centros Educativos Universitarios</option>');
+
+    }
+
+    function realizarConsulta(feature) {
+
+      view.whenLayerView(feature).then(function(lyrView) {
+        lyrView.watch("updating", function(val) {
+          if (!val) { // wait for the layer view to finish updating
+            lyrView.queryFeatures().then(function(results) {
+              console.log(results.length);
+
+            });
+          }
+        });
+      });
+    }
+
+
+    function cargarFiltros() {
+
+      if (paradas.visible && grupoParadasMetro.visible) {
+
+        $("#FiltroParadasMetro").css("display", "block");
+      } else {
+        $("#FiltroParadasMetro").css("display", "none");
+      }
+      if (paradasAutobuses.visible) {
+
+        $("#FiltroParadasAutobus").css("display", "block");
+      } else {
+        $("#FiltroParadasAutobus").css("display", "none");
+      }
+      if (taxis.visible && grupoTaxis.visible) {
+
+        $("#FiltroParadasTaxi").css("display", "block");
+      } else {
+        $("#FiltroParadasTaxi").css("display", "none");
+      }
+
+      if (paradasRenfe.visible && grupoParadasRenfe.visible) {
+
+        $("#FiltroParadasRenfe").css("display", "block");
+      } else {
+        $("#FiltroParadasRenfe").css("display", "none");
+      }
+
+      if (paradasMetroLigero.visible && grupoParadasMetroLigero.visible) {
+
+        $("#FiltroParadasMetroLigero").css("display", "block");
+      } else {
+        $("#FiltroParadasMetroLigero").css("display", "none");
+      }
+
+      if (policiaMunicipal.visible ) {
+
+        $("#FiltroPoliciaMunicipal").css("display", "block");
+      } else {
+        $("#FiltroPoliciaMunicipal").css("display", "none");
+      }
+
+      if (museos.visible) {
+
+        $("#FiltroMuseos").css("display", "block");
+      } else {
+        $("#FiltroMuseos").css("display", "none");
+      }
+
+      if (aparcamientosDisuasion.visible && grupoAparcamientos.visible) {
+
+        $("#FiltroAparcamientosDisuasion").css("display", "block");
+      } else {
+        $("#FiltroAparcamientosDisuasion").css("display", "none");
+      }
+
+      if (aparcabicicletas.visible && grupoBicicletas.visible) {
+
+        $("#FiltroAparcaBicicletas").css("display", "block");
+      } else {
+        $("#FiltroAparcaBicicletas").css("display", "none");
+      }
+
+      if (basesBicicletas.visible && grupoBicicletas.visible) {
+
+        $("#FiltroBasesBicicletas").css("display", "block");
+      } else {
+        $("#FiltroBasesBicicletas").css("display", "none");
+      }
+
+      if (centrosREB.visible && grupoBicicletas.visible) {
+
+        $("#FiltroCentrosREB").css("display", "block");
+      } else {
+        $("#FiltroCentrosREB").css("display", "none");
+      }
+
+      if (centrosEducativos.visible && grupoCentrosEducativos.visible) {
+
+        $("#FiltroCentrosEducativos").css("display", "block");
+      } else {
+        $("#FiltroCentrosEducativos").css("display", "none");
+      }
+
+      if (centrosEducativosUniversitarios.visible && grupoCentrosEducativos.visible) {
+
+        $("#FiltroCentrosEducativosUniversitarios").css("display", "block");
+      } else {
+        $("#FiltroCentrosEducativosUniversitarios").css("display", "none");
+      }
+
+      if (edificiosTransparentes.visible || edificios.visible) {
+
+        $("#FiltroEdificios").css("display", "block");
+      } else {
+        $("#FiltroEdificios").css("display", "none");
+      }
+
+    }
+
+
+    function cargarGraficos() {
+
+      if (paradas.visible && grupoParadasMetro.visible) {
+        consultaCantidadTotalParadas();
+        $("#ParadasMetro").css("display", "block");
+      } else {
+        $("#ParadasMetro").css("display", "none");
+      }
+      if (paradasAutobuses.visible) {
+        consultaCantidadTotalAutobus();
+        $("#ParadasAutobus").css("display", "block");
+      } else {
+        $("#ParadasAutobus").css("display", "none");
+      }
+      if (taxis.visible && grupoTaxis.visible) {
+        consultaCantidadTotalTaxi();
+        $("#ParadasTaxi").css("display", "block");
+      } else {
+        $("#ParadasTaxi").css("display", "none");
+      }
+      if (paradasRenfe.visible && grupoParadasRenfe.visible) {
+        consultaCantidadTotalParadasRenfe();
+        $("#ParadasRenfe").css("display", "block");
+      } else {
+        $("#ParadasRenfe").css("display", "none");
+      }
+      if (paradasMetroLigero.visible && grupoParadasMetroLigero.visible) {
+        consultaCantidadTotalParadasMetroLigero();
+        $("#ParadasMetroLigero").css("display", "block");
+      } else {
+        $("#ParadasMetroLigero").css("display", "none");
+      }
+      if (policiaMunicipal.visible ) {
+        consultaCantidadTotalPoliciaMunicipal();
+        $("#PoliciaMunicipal").css("display", "block");
+      } else {
+        $("#PoliciaMunicipal").css("display", "none");
+      }
+      if (museos.visible) {
+        consultaCantidadTotalMuseos();
+        $("#Museos").css("display", "block");
+      } else {
+        $("#Museos").css("display", "none");
+      }
+      if (aparcamientosDisuasion.visible && grupoAparcamientos.visible) {
+        consultaCantidadTotalAparcamientosDisuasion();
+        $("#AparcamientosDisuasion").css("display", "block");
+      } else {
+        $("#AparcamientosDisuasion").css("display", "none");
+      }
+
+      if (aparcabicicletas.visible && grupoBicicletas.visible) {
+        consultaCantidadTotalAparcaBicicletas();
+        $("#AparcaBicicletas").css("display", "block");
+      } else {
+        $("#AparcaBicicletas").css("display", "none");
+      }
+
+      if (basesBicicletas.visible && grupoBicicletas.visible) {
+        consultaCantidadTotalBasesBicicletas();
+        $("#BasesBicicletas").css("display", "block");
+      } else {
+        $("#BasesBicicletas").css("display", "none");
+      }
+
+      if (centrosREB.visible && grupoBicicletas.visible) {
+        consultaCantidadTotalCentrosREB();
+        $("#CentrosREB").css("display", "block");
+      } else {
+        $("#CentrosREB").css("display", "none");
+      }
+
+      if (centrosEducativos.visible && grupoCentrosEducativos.visible) {
+        consultaCantidadTotalCentrosEducativos();
+        $("#CentrosEducativos").css("display", "block");
+      } else {
+        $("#CentrosEducativos").css("display", "none");
+      }
+
+      if (centrosEducativosUniversitarios.visible && grupoCentrosEducativos.visible) {
+        consultaCantidadTotalCentrosEducativosUniversitarios();
+        $("#CentrosEducativosUniversitarios").css("display", "block");
+      } else {
+        $("#CentrosEducativosUniversitarios").css("display", "none");
+      }
+
+
+    }
+
+    function consultaCantidadTotalParadas() {
+
+      var query = paradas.createQuery();
+
+      if (paradas.definitionExpression != null)
+        query.where = paradas.definitionExpression;
+      else {
+        paradas.definitionExpression = "ObjectID >= 0";
+        query.where = paradas.definitionExpression;
+      }
+
+      paradas.queryFeatures().then(function(results) {
+        $("#cantidadParadasMetro").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalAutobus() {
+
+      var query = paradasAutobuses.createQuery();
+
+      if (paradasAutobuses.definitionExpression != null)
+        query.where = paradasAutobuses.definitionExpression;
+      else {
+        paradasAutobuses.definitionExpression = "ObjectID >= 0";
+        query.where = paradasAutobuses.definitionExpression;
+      }
+
+      paradasAutobuses.queryFeatures().then(function(results) {
+        $("#cantidadParadasAutobus").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalTaxi() {
+
+      var query = taxis.createQuery();
+
+      if (taxis.definitionExpression != null)
+        query.where = taxis.definitionExpression;
+      else {
+        taxis.definitionExpression = "ObjectID >= 0";
+        query.where = taxis.definitionExpression;
+      }
+      taxis.queryFeatures(query).then(function(results) {
+        $("#cantidadParadasTaxi").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalParadasRenfe() {
+
+      var query = paradasRenfe.createQuery();
+
+      if (paradasRenfe.definitionExpression != null)
+        query.where = paradasRenfe.definitionExpression;
+      else {
+        paradasRenfe.definitionExpression = "ObjectID >= 0";
+        query.where = paradasRenfe.definitionExpression;
+      }
+      paradasRenfe.queryFeatures(query).then(function(results) {
+        $("#cantidadParadasRenfe").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalParadasMetroLigero() {
+
+      var query = paradasMetroLigero.createQuery();
+
+      if (paradasMetroLigero.definitionExpression != null)
+        query.where = paradasMetroLigero.definitionExpression;
+      else {
+        paradasMetroLigero.definitionExpression = "ObjectID >= 0";
+        query.where = paradasMetroLigero.definitionExpression;
+      }
+      paradasMetroLigero.queryFeatures(query).then(function(results) {
+        $("#cantidadParadasMetroLigero").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalPoliciaMunicipal() {
+
+      var query = policiaMunicipal.createQuery();
+
+      if (policiaMunicipal.definitionExpression != null)
+        query.where = policiaMunicipal.definitionExpression;
+      else {
+        policiaMunicipal.definitionExpression = "ObjectID >= 0";
+        query.where = policiaMunicipal.definitionExpression;
+      }
+      policiaMunicipal.queryFeatures(query).then(function(results) {
+        $("#cantidadPoliciaMunicipal").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalMuseos() {
+
+      var query = museos.createQuery();
+
+      if (museos.definitionExpression != null)
+        query.where = museos.definitionExpression;
+      else {
+        museos.definitionExpression = "ObjectID >= 0";
+        query.where = museos.definitionExpression;
+      }
+      museos.queryFeatures(query).then(function(results) {
+        $("#cantidadMuseos").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalAparcamientosDisuasion() {
+
+      var query = aparcamientosDisuasion.createQuery();
+
+      if (aparcamientosDisuasion.definitionExpression != null)
+        query.where = aparcamientosDisuasion.definitionExpression;
+      else {
+        aparcamientosDisuasion.definitionExpression = "ObjectID >= 0";
+        query.where = aparcamientosDisuasion.definitionExpression;
+      }
+      aparcamientosDisuasion.queryFeatures(query).then(function(results) {
+        $("#cantidadAparcamientosDisuasion").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalAparcaBicicletas() {
+
+      var query = aparcabicicletas.createQuery();
+
+      if (aparcabicicletas.definitionExpression != null)
+        query.where = aparcabicicletas.definitionExpression;
+      else {
+        aparcabicicletas.definitionExpression = "ObjectID >= 0";
+        query.where = aparcabicicletas.definitionExpression;
+      }
+      aparcabicicletas.queryFeatures(query).then(function(results) {
+        $("#cantidadAparcaBicicletas").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalBasesBicicletas() {
+
+      var query = basesBicicletas.createQuery();
+
+      if (basesBicicletas.definitionExpression != null)
+        query.where = basesBicicletas.definitionExpression;
+      else {
+        basesBicicletas.definitionExpression = "ObjectID >= 0";
+        query.where = basesBicicletas.definitionExpression;
+      }
+      basesBicicletas.queryFeatures(query).then(function(results) {
+        $("#cantidadBasesBicicletas").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalCentrosREB() {
+
+      var query = centrosREB.createQuery();
+
+      if (centrosREB.definitionExpression != null)
+        query.where = centrosREB.definitionExpression;
+      else {
+        centrosREB.definitionExpression = "ObjectID >= 0";
+        query.where = centrosREB.definitionExpression;
+      }
+      centrosREB.queryFeatures(query).then(function(results) {
+        $("#cantidadCentrosREB").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalCentrosEducativos() {
+
+      var query = centrosEducativos.createQuery();
+
+      if (centrosEducativos.definitionExpression != null)
+        query.where = centrosEducativos.definitionExpression;
+      else {
+        centrosEducativos.definitionExpression = "FID >= 0";
+        query.where = centrosEducativos.definitionExpression;
+      }
+      centrosEducativos.queryFeatures(query).then(function(results) {
+        $("#cantidadCentrosEducativos").html(results.features.length);
+
+      });
+    }
+
+    function consultaCantidadTotalCentrosEducativosUniversitarios() {
+
+      var query = centrosEducativosUniversitarios.createQuery();
+
+      if (centrosEducativosUniversitarios.definitionExpression != null)
+        query.where = centrosEducativosUniversitarios.definitionExpression;
+      else {
+        centrosEducativosUniversitarios.definitionExpression = "FID >= 0";
+        query.where = centrosEducativosUniversitarios.definitionExpression;
+      }
+      centrosEducativosUniversitarios.queryFeatures(query).then(function(results) {
+        $("#cantidadCentrosEducativosUniversitarios").html(results.features.length);
+
+      });
+    }
+
+
+    function realizarConsultaSimpleMetro(feature) {
+
+      var query = paradas.createQuery();
+
+      if (paradas.definitionExpression != null)
+        query.where = paradas.definitionExpression;
+      else {
+        paradas.definitionExpression = "ObjectID >= 0";
+        query.where = paradas.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "metro";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "paradaMetro" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaMetro" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.DENOMINACION + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.DENOMINACION +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.DENOMINACION + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.DENOMINACION + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+    }
+
+    function realizarConsultaSimpleAutobus(feature) {
+
+      var query = paradasAutobuses.createQuery();
+
+      if (paradasAutobuses.definitionExpression != null)
+        query.where = paradasAutobuses.definitionExpression;
+      else {
+        paradasAutobuses.definitionExpression = "ObjectID >= 0";
+        query.where = paradasAutobuses.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "paradasBus";
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "paradaBus" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaBus" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.DENOMINACION + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.DENOMINACION +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.DENOMINACION + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.DENOMINACION + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+
+      });
+    }
+
+    function realizarConsultaSimpleTaxi(feature) {
+
+      var query = taxis.createQuery();
+
+      if (taxis.definitionExpression != null)
+        query.where = taxis.definitionExpression;
+      else {
+        taxis.definitionExpression = "ObjectID >= 0";
+        query.where = taxis.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "paradasTaxi";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "paradaTaxi" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaTaxi" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_BARRIO + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.A_CALLE +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.A_DISTRITO + "</small><br><small class='text-muted'>Número Plazas: " + results.features[i].attributes.N_PLAZAS + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleParadasRenfe(feature) {
+
+      var query = paradasRenfe.createQuery();
+
+      if (paradasRenfe.definitionExpression != null)
+        query.where = paradasRenfe.definitionExpression;
+      else {
+        paradasRenfe.definitionExpression = "ObjectID >= 0";
+        query.where = paradasRenfe.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "paradasRenfe";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "paradaRenfe" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaRenfe" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.DENOMINACION +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.A_CALLE + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.A_CALLE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+
+    function realizarConsultaSimpleParadasMetroLigero(feature) {
+
+      var query = paradasMetroLigero.createQuery();
+
+      if (paradasMetroLigero.definitionExpression != null)
+        query.where = paradasMetroLigero.definitionExpression;
+      else {
+        paradasMetroLigero.definitionExpression = "ObjectID >= 0";
+        query.where = paradasMetroLigero.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "paradasMetroLigero";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "paradaMetroLigero" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaMetroLigero" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.DENOMINACION +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.A_CALLE + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.A_CALLE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimplePoliciaMunicipal(feature) {
+
+      var query = policiaMunicipal.createQuery();
+
+      if (policiaMunicipal.definitionExpression != null)
+        query.where = policiaMunicipal.definitionExpression;
+      else {
+        policiaMunicipal.definitionExpression = "ObjectID >= 0";
+        query.where = policiaMunicipal.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "policiaMunicipal";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "policiaMunicipal" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='paradaPoliciaMunicipal" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.ETIQUETA +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.Dirección + "</small><br><small class='text-muted'>Información: " + results.features[i].attributes.INFOR + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleMuseos(feature) {
+
+      var query = museos.createQuery();
+
+      if (museos.definitionExpression != null)
+        query.where = museos.definitionExpression;
+      else {
+        museos.definitionExpression = "ObjectID >= 0";
+        query.where = museos.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "museos";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "museos" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='museos" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.NOMBRE +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.DIRECCION + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleAparcamientosDisuasion(feature) {
+
+      var query = aparcamientosDisuasion.createQuery();
+
+      if (aparcamientosDisuasion.definitionExpression != null)
+        query.where = aparcamientosDisuasion.definitionExpression;
+      else {
+        aparcamientosDisuasion.definitionExpression = "ObjectID >= 0";
+        query.where = aparcamientosDisuasion.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "parkingDisuasorio";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "aparcamientosDisuasion" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='aparcamientosDisuasion" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.A_CALLE +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.A_CALLE + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.A_CALLE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleAparcaBicicletas(feature) {
+
+      var query = aparcabicicletas.createQuery();
+
+      if (aparcabicicletas.definitionExpression != null)
+        query.where = aparcabicicletas.definitionExpression;
+      else {
+        aparcabicicletas.definitionExpression = "ObjectID >= 0";
+        query.where = aparcabicicletas.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "aparcabicis";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "aparcabicis" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='aparcabicis" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>Distrito: " + results.features[i].attributes.TX_DISTRIT + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" +
+              paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.CODIGO +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.DIRECCION + "</small><br><small class='text-muted'>Arcos: " + results.features[i].attributes.ARCOS + " | Capacidad: " + results.features[i]
+              .attributes.CAPACIDAD + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleBasesBicicletas(feature) {
+
+      var query = basesBicicletas.createQuery();
+
+      if (basesBicicletas.definitionExpression != null)
+        query.where = basesBicicletas.definitionExpression;
+      else {
+        basesBicicletas.definitionExpression = "ObjectID >= 0";
+        query.where = basesBicicletas.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "bases";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "bases" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='bases" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .OBJECTID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>Distrito: " + results.features[i].attributes.Distrito + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.Estación +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.Calle + "</small><br><small class='text-muted'>Anclajes: " + results.features[i].attributes.Anclajes + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleCentrosREB(feature) {
+
+      var query = centrosREB.createQuery();
+
+      if (centrosREB.definitionExpression != null)
+        query.where = centrosREB.definitionExpression;
+      else {
+        centrosREB.definitionExpression = "ObjectID >= 0";
+        query.where = centrosREB.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "centrosREB";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.x,
+                "y": results.features[i].geometry.y
+              }),
+              "identificador": {
+                "id": "centrosREB" + results.features[i].attributes.OBJECTID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.OBJECTID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='centrosREB" + results.features[i].attributes.OBJECTID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.A_CALLE + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.A_CALLE +
+              "</div><small class='text-muted'>Localización: " + results.features[i].attributes.A_CALLE + "</small><br><small class='text-muted'>Tipo: " + results.features[i].attributes.A_CALLE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleCentrosEducativos(feature) {
+
+      var query = centrosEducativos.createQuery();
+
+      if (centrosEducativos.definitionExpression != null)
+        query.where = centrosEducativos.definitionExpression;
+      else {
+        centrosEducativos.definitionExpression = "FID >= 0";
+        query.where = centrosEducativos.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "educacion";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.longitude,
+                "y": results.features[i].geometry.latitude
+              }),
+              "identificador": {
+                "id": "centrosEducativos" + results.features[i].attributes.FID
+              }
+            };
+
+
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.FID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='centrosEducativos" + results.features[i].attributes.FID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .FID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.BARRIO + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.NOMBRE +
+              "</div><small class='text-muted'>Transporte: " + results.features[i].attributes.TRANSPORTE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+    function realizarConsultaSimpleCentrosEducativosUniversitarios(feature) {
+
+      var query = centrosEducativosUniversitarios.createQuery();
+
+      if (centrosEducativosUniversitarios.definitionExpression != null)
+        query.where = centrosEducativosUniversitarios.definitionExpression;
+      else {
+        centrosEducativosUniversitarios.definitionExpression = "FID >= 0";
+        query.where = centrosEducativosUniversitarios.definitionExpression;
+      }
+
+      feature.queryFeatures(query).then(function(results) {
+        // prints the array of result graphics to the console
+        console.log(results.features);
+        $("#listadoEventos").html("<img style='position:absolute;margin-left:auto;margin-right:auto;left:0;right:0;top:40%;' src='https://doc24.vn/img/indicator.gif?1493858651' alt=''>");
+        setTimeout(function() {
+          $("#listadoEventos").html("");
+          paradaBusImagen = "educacionUniversitaria";
+
+          for (i = 0; i < results.features.length; i++) {
+            //console.log(results.features[i].attributes.DENOMINACION);
+
+            var pointsAuxiliar = {
+              "coordenadas": new Point({
+                "x": results.features[i].geometry.longitude,
+                "y": results.features[i].geometry.latitude
+              }),
+              "identificador": {
+                "id": "centrosEducativosUniversitarios" + results.features[i].attributes.FID
+              }
+            };
+
+            arrayCoordenadasAuxiliar.push(pointsAuxiliar);
+
+            $("#listadoEventos").append("<div id='" + results.features[i].attributes.FID + "' class='message'><div class='p-y-1 p-b-3 m-r-1 pull-left' style='margin-top:4px;';><div class='avatar'><img src='img/" + paradaBusImagen +
+              ".png' id='centrosEducativosUniversitarios" + results.features[i].attributes.FID +
+              "' class='img-avatar' alt='admin@bootstrapmaster.com'><span style='display:none; background-color:green' class='avatar-status tag-success'></span></div></div><div class='contenidoListado' id='" + results.features[i].attributes
+              .ObjectID +
+              "'><div><small style='margin-left:5px;' class='text-muted'>" + results.features[i].attributes.BARRIO + "</small><small class='text-muted pull-right m-t-q'><img style='width:15px;' src='img/" + paradaBusImagen +
+              ".png'></img></small></div><div style='margin-left:41px;' class='text-truncate font-weight-bold'>" + results.features[i].attributes.NOMBRE +
+              "</div><small class='text-muted'>Transporte: " + results.features[i].attributes.TRANSPORTE + "</small></div><hr></div>");
+
+          }
+        }, 500);
+
+      });
+
+      console.log(arrayCoordenadasAuxiliar);
+    }
+
+
+
+
+
+
+    function renderizarEdificios(edificios) {
+
+      var symbol = new MeshSymbol3D();
+
+      edificios.renderer = new SimpleRenderer({
+        symbol: symbol,
+        visualVariables: [{
+          type: "color",
+          field: "Pisos",
+          stops: [{
+              value: 1,
+              color: "#72b6ee"
+            },
+            {
+              value: 30,
+              color: "#e6eeef"
+            }
+          ]
+        }]
+      });
+
+
+
+
+    }
+
+
+
+
+    function renderizarFeatureParadas(paradas) {
+
+      //paradas.definitionExpression = "ObjectID=1";
+      paradas.renderer = renderizadoParadasMetro;
+      paradas.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{DENOMINACION}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      paradas.labelsVisible = true;
+
+      paradas.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureTaxis(taxis) {
+
+      //paradas.definitionExpression = "ObjectID=1";
+      taxis.renderer = renderizadoParadasTaxi;
+      taxis.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{A_NUMERO_PARADA}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      taxis.labelsVisible = true;
+
+      taxis.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureRenfe(paradasRenfe) {
+
+      paradasRenfe.renderer = renderizadoParadasRenfe;
+      paradasRenfe.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{DENOMINACION}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      paradasRenfe.labelsVisible = true;
+
+      paradasRenfe.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureParadasMetroLigero(paradasMetroLigero) {
+
+      paradasMetroLigero.renderer = renderizadoParadasMetroLigero;
+      paradasMetroLigero.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{DENOMINACION}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      paradasMetroLigero.labelsVisible = true;
+
+      paradasMetroLigero.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeaturePoliciaMunicipal(policiaMunicipal) {
+
+      policiaMunicipal.renderer = renderizadoPoliciaMunicipal;
+      policiaMunicipal.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{ETIQUETA}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      policiaMunicipal.labelsVisible = true;
+
+      policiaMunicipal.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureBasesBicicletas(basesBicicletas) {
+
+      basesBicicletas.renderer = renderizadoBasesBicicletas;
+      basesBicicletas.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{Calle}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      basesBicicletas.labelsVisible = true;
+
+      basesBicicletas.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureAparcamientosDisuasion(aparcamientosDisuasion) {
+
+      aparcamientosDisuasion.renderer = renderizadoAparcamientosDisuasion;
+      aparcamientosDisuasion.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{EMPLAZAMIE}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      aparcamientosDisuasion.labelsVisible = true;
+
+      aparcamientosDisuasion.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureCentrosREB(centrosREB) {
+
+      centrosREB.renderer = renderizadoCentrosREB;
+      centrosREB.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{IDESTACION}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      centrosREB.labelsVisible = true;
+
+      centrosREB.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureAparcaBicicletas(aparcabicicletas) {
+
+      aparcabicicletas.renderer = renderizadoAparcaBicicletas;
+      aparcabicicletas.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{CENTRO}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      aparcabicicletas.labelsVisible = true;
+
+      aparcabicicletas.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureMuseos(museos) {
+
+      museos.renderer = renderizadoMuseos;
+      museos.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{NOMBRE}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      museos.labelsVisible = true;
+
+      museos.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureCentrosEducativos(centrosEducativos) {
+      //centrosEducativos.definitionExpression = "NOMBRE = 'Escuela Infantil Mafalda'";
+      centrosEducativos.renderer = renderizadoCentrosEducativos;
+      centrosEducativos.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{NOMBRE}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      centrosEducativos.labelsVisible = true;
+
+      centrosEducativos.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    function renderizarFeatureCentrosEducativosUniversitarios(centrosEducativosUniversitarios) {
+
+      centrosEducativosUniversitarios.renderer = renderizadoCentrosEducativosUniversitarios;
+      centrosEducativosUniversitarios.labelingInfo = [{
+        labelExpressionInfo: {
+          value: "{NOMBRE}"
+        },
+        symbol: new LabelSymbol3D({
+          symbolLayers: [
+            new TextSymbol3DLayer({
+              material: {
+                color: "white"
+              },
+              // we set a halo on the font to make the labels more visible with any kind of background
+              halo: {
+                size: 1,
+                color: [50, 50, 50]
+              },
+              size: 10
+            })
+          ]
+        })
+      }];
+      centrosEducativosUniversitarios.labelsVisible = true;
+
+      centrosEducativosUniversitarios.featureReduction = {
+        type: "selection"
+      };
+
+    }
+
+    var pTemplateAutobuses = {
+      title: "NÚMERO PARADA: " + "{CODIGOESTACION}",
+      content: [{
+        type: "fields",
+        fieldInfos: [{
+            fieldName: "ObjectID",
+            label: "Identificador",
+            visible: true
+          },
+          {
+            fieldName: "denominacion",
+            label: "Nombre de Parada",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOESTACION",
+            label: "Código de la estación",
+            visible: true
+          },
+          {
+            fieldName: "situacion",
+            label: "Situación",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOCTMESTACIONREDMETRO",
+            label: "CODIGOCTMESTACIONREDMETRO",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOEMPRESA",
+            label: "CODIGOEMPRESA",
+            visible: true
+          },
+          {
+            fieldName: "MODOINTERCAMBIADOR",
+            label: "MODOINTERCAMBIADOR",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOINTERCAMBIADOR",
+            label: "CODIGOINTERCAMBIADOR",
+            visible: true
+          },
+          {
+            fieldName: "TIPO",
+            label: "TIPO",
+            visible: true
+          },
+          {
+            fieldName: "TIPOVIA",
+            label: "TIPOVIA",
+            visible: true
+          },
+          {
+            fieldName: "NOMBREVIA",
+            label: "NOMBREVIA",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOVIA",
+            label: "CODIGOVIA",
+            visible: true
+          },
+          {
+            fieldName: "TIPONUMERO",
+            label: "TIPONUMERO",
+            visible: true
+          },
+          {
+            fieldName: "NUMEROPORTAL",
+            label: "NUMEROPORTAL",
+            visible: true
+          },
+          {
+            fieldName: "CODIGOPOSTAL",
+            label: "CODIGOPOSTAL",
+            visible: true
+          },
+          {
+            fieldName: "DISTRITO",
+            label: "DISTRITO",
+            visible: true
+          },
+          {
+            fieldName: "BARRIO",
+            label: "BARRIO",
+            visible: true
+          },
+          {
+            fieldName: "CORONATARIFARIA",
+            label: "CORONATARIFARIA",
+            visible: true
+          },
+          {
+            fieldName: "FECHAALTA",
+            label: "FECHAALTA",
+            visible: true
+          },
+          {
+            fieldName: "FECHAINICIO",
+            label: "FECHAINICIO",
+            visible: true
+          },
+          {
+            fieldName: "FECHAFIN",
+            label: "FECHAFIN",
+            visible: true
+          },
+          {
+            fieldName: "GRADOACCESIBILIDAD",
+            label: "GRADOACCESIBILIDAD",
+            visible: true
+          }
+        ]
+      }]
+    };
+
+
+    // verticalOffset shifts the symbol vertically
+    var verticalOffset = {
+      screenLength: 40,
+      maxWorldLength: 200,
+      minWorldLength: 35
+    };
+
+    // Function that automatically creates the symbol for the points of interest
+    function getUniqueValueSymbol(name, color) {
+
+      return new PointSymbol3D({
+        symbolLayers: [
+          new IconSymbol3DLayer({
+            resource: {
+              href: name
+            },
+            size: 20,
+            outline: {
+              color: "white",
+              size: 2
+            }
+          })
+        ],
+
+        verticalOffset: verticalOffset,
+
+        callout: new LineCallout3D({
+          color: "white",
+          size: 2,
+          border: {
+            color: color
+          }
+        })
+      });
+    }
+
+
+    var renderizadoParadasMetro = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/metro.png", "#e72b37")
+      }]
+    });
+
+    var renderizadoParadasTaxi = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/paradasTaxi.png", "#E38B07")
+      }]
+    });
+
+    var renderizadoParadasBus = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/paradasBus.png", "#1d87de")
+      }]
+    });
+
+    var renderizadoParadasRenfe = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/paradasRenfe.png", "#ef2c30")
+      }]
+    });
+
+    var renderizadoParadasMetroLigero = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/paradasMetroLigero.png", "#ff0000")
+      }]
+    });
+
+    var renderizadoPoliciaMunicipal = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/policiaMunicipal.png", "#002748")
+      }]
+    });
+
+    var renderizadoMuseos = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/museos.png", "#821111")
+      }]
+    });
+
+    var renderizadoAparcaBicicletas = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/aparcabicis.png", "#78bef0")
+      }]
+    });
+
+    var renderizadoBasesBicicletas = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/bases.png", "#F09278")
+      }]
+    });
+
+    var renderizadoCentrosREB = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/centrosREB.png", "#78F0A0")
+      }]
+    });
+
+    var renderizadoAparcamientosDisuasion = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/parkingDisuasorio.png", "#34abe0")
+      }]
+    });
+
+    var renderizadoCentrosEducativos = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/educacion.png", "#c732ac")
+      }]
+    });
+
+    var renderizadoCentrosEducativosUniversitarios = new UniqueValueRenderer({
+      uniqueValueInfos: [{
+        symbol: getUniqueValueSymbol("img/educacionUniversitaria.png", "#6B32C7")
+      }]
+    });
+
+
+
+
+    function crearLeyenda() {
+
+      var legend = new Legend({
+        view: view,
+        container: "legend",
+        layerInfos: [{
+          layer: edificios,
+          title: "Edificios 3D Sin Transparencias"
+        }, {
+          layer: edificiosTransparentes,
+          title: "Edificios 3D Semi Transparentes"
+
+        }, {
+          layer: paradas,
+          title: "Paradas Metro Madrid"
+
+        }, {
+          layer: paradasAutobuses,
+          title: "Paradas Autobuses Urbanos"
+
+        }, {
+          layer: taxis,
+          title: "Paradas de Taxi"
+
+        }, {
+          layer: paradasRenfe,
+          title: "Paradas Renfe"
+
+        }, {
+          layer: paradasMetroLigero,
+          title: "Paradas Metro Ligero"
+
+        }, {
+          layer: policiaMunicipal,
+          title: "Policia Municipal"
+
+        }, {
+          layer: museos,
+          title: "Museos"
+
+        }, {
+          layer: aparcabicicletas,
+          title: "Aparca Bicicletas"
+
+        }, {
+          layer: basesBicicletas,
+          title: "Bases Bicicletas"
+
+        }, {
+          layer: centrosREB,
+          title: "Centros REB"
+
+        }, {
+          layer: aparcamientosDisuasion,
+          title: "Aparcamientos Disuasión"
+
+        }, {
+          layer: centrosEducativos,
+          title: "Centros Educativos"
+
+        }, {
+          layer: centrosEducativosUniversitarios,
+          title: "Centros Educativos Universitarios"
+
+        }]
+      });
+
+    }
+
+    setTimeout(function() {
+      $("#loadingPage").css("display", "none");
+    }, 1000);
+
+
+    var homeBtn = new Home({
+      view: view
+    });
+
+    view.ui.add(homeBtn, "top-left");
+
+
+    var locateWidget = new Locate({
+      view: view // Attaches the Locate button to the view
+
+    });
+
+    view.ui.add(locateWidget, "top-left");
+
+
+
+
+    var searchWidget = new Search({
+      view: view,
+      container: "barraSuperior"
+    });
+
+    var basemapGallery = new BasemapGallery({
+      view: view,
+      container: "baseMaps"
+    });
+
+
+
+
+    function getX(id) {
+      encontrado = false;
+      i = 0;
+      while (i < arrayCoordenadasAuxiliar.length && !encontrado) {
+        if (arrayCoordenadasAuxiliar[i].identificador.id == id) {
+          encontrado = true;
+          x = arrayCoordenadasAuxiliar[i].coordenadas.x;
+        }
+
+        i++;
+      }
+
+      return x;
+    }
+
+    function getY(id) {
+
+      encontrado = false;
+      i = 0;
+      while (i < arrayCoordenadasAuxiliar.length && !encontrado) {
+        if (arrayCoordenadasAuxiliar[i].identificador.id == id) {
+          encontrado = true;
+          y = arrayCoordenadasAuxiliar[i].coordenadas.y;
+        }
+
+        i++;
+      }
+
+      return y;
+    }
+
+    $("#listadoEventos").on("click", ".message", function(event) {
+      id = event.target.id;
+      //alert(id);
+
+
+      substring = "centrosEducativos";
+
+      if (id.indexOf(substring) !== -1) {
+
+        goToFunctionNoProject(getX(id), getY(id));
+      } else {
+        goToFunction(getX(id), getY(id));
+      }
+    });
+
+
+    function goToFunction(x, y) {
+
+      //alert(x + " | " + y);
+      shiftCamera(x, y);
+    }
+
+    function goToFunctionNoProject(x, y) {
+
+
+      var camera = view.camera.clone();
+
+      pto = new Point(x, y);
+      //alert(x + "|" + y);
+      view.goTo({
+        target: pto,
+        tilt: 0
+      });
+    }
+
+    function shiftCamera(x, y) {
+      //var conversion = webMercatorUtils.xyToLngLat(x, y);
+
+      pt = new Point(x, y);
+      pt.spatialReference = new SpatialReference({
+        wkid: 25830
+      });
+      var geomSer = new GeometryService("https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+      var params = new ProjectParameters();
+      var outSpatialReference = new SpatialReference({
+        wkid: 102100
+      });
+      var transformation = new SpatialReference({
+        wkid: 1149
+      });
+      params.geometries = [pt];
+      params.outSpatialReference = outSpatialReference;
+      params.transformation = transformation;
+
+
+      geomSer.project(params).then(function(parametros) {
+
+        console.log(parametros);
+        var camera = view.camera.clone();
+        camera.position.latitude = parametros[0].latitude;
+        camera.position.longitude = parametros[0].longitude;
+        camera.position.spatialReference.wkid = parametros[0].spatialReference.wkid;
+
+        //view.goTo(camera);
+        pto = new Point(parametros[0].longitude, parametros[0].latitude);
+        view.goTo({
+          target: pto,
+          tilt: 0
+        });
+        //camera.position.spatialReference.wkid = 102100;
+      });
+
+
+    }
+
+    var FiltroAparcaBicicletas = null;
+    var FiltroAparcaBicicletasArcos = null;
+    var FiltroRangeTaxis = null;
+    var FiltroTextoTaxis = null;
+
+    $("#buttonFiltroCentrosEducativos").on("click", function() {
+      var textoFiltroCentrosEducativos = $("#inputCentrosEducativos").val();
+      centrosEducativos.definitionExpression = "DESCRIPCION like '%" + textoFiltroCentrosEducativos + "%'";
+    });
+
+    $("#buttonFiltroCentrosEducativosUniversitarios").on("click", function() {
+      var textoFiltroCentrosEducativosUniversitarios = $("#inputCentrosEducativosUniversitarios").val();
+      centrosEducativosUniversitarios.definitionExpression = "NOMBRE like '%" + textoFiltroCentrosEducativosUniversitarios + "%'";
+    });
+
+    $("#buttonFiltroTaxis").on("click", function() {
+      var textoFiltroTaxis = $("#inputTaxis").val();
+
+
+      FiltroTextoTaxis = "A_BARRIO like '%" + textoFiltroTaxis + "%' OR A_DISTRITO like '%" + textoFiltroTaxis + "%'";
+
+      if (FiltroRangeTaxis != null) {
+
+        taxis.definitionExpression = "(" + FiltroRangeTaxis + ") AND (" + FiltroTextoTaxis + ")";
+
+      } else {
+        taxis.definitionExpression = FiltroTextoTaxis;
+      }
+    });
+
+
+
+
+
+
+
+    $(function() {
+
+      $("#range").ionRangeSlider({
+        hide_min_max: true,
+        keyboard: true,
+        from: 0,
+        values: [
+          "Calle", "Plaza", "Paseo", "Avda", "Ctra", "Gta", "Ronda", "Bulv", "Parcela", "Cmno", "Col"
+        ],
+        step: 1,
+        prefix: "Vía: ",
+        grid: true,
+        onChange: function(data) {
+          paradas.definitionExpression = "TIPOVIA = '" + data.from_value + "'";
+          //paradas.definitionExpression = "ObjectID = 1";
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#rangeEdificios").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 70,
+        from: 0,
+        to: 70,
+        step: 1,
+        prefix: "Pisos: ",
+        grid: true,
+        onChange: function(data) {
+          edificios.definitionExpression = "Pisos >= " + data.from + " and Pisos <=" + data.to;
+          //paradas.definitionExpression = "ObjectID = 1";
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#range2").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 50,
+        from: 0,
+        to: 50,
+        step: 1,
+        prefix: "Pisos: ",
+        grid: true,
+        onChange: function(data) {
+          //sceneLayer.definitionExpression = "Pisos=" + data.from;
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#range3").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 50,
+        from: 3,
+        to: 30,
+        step: 1,
+        prefix: "Plazas: ",
+        grid: true,
+        onChange: function(data) {
+
+          FiltroRangeTaxis = "N_PLAZAS >= " + data.from + " and N_PLAZAS <=" + data.to;
+
+          if (FiltroTextoTaxis != null) {
+
+            taxis.definitionExpression = "(" + FiltroRangeTaxis + ") AND (" + FiltroTextoTaxis + ")";
+
+          } else {
+            taxis.definitionExpression = FiltroRangeTaxis;
+          }
+
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#rangeAparcaBicicletasArcos").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 20,
+        from: 1,
+        to: 15,
+        step: 1,
+        prefix: "Arcos: ",
+        grid: true,
+        onChange: function(data) {
+
+          FiltroAparcaBicicletasArcos = aparcabicicletas.definitionExpression = "ARCOS >= " + data.from + " and ARCOS <=" + data.to;
+
+          if (FiltroAparcaBicicletas != null) {
+
+            aparcabicicletas.definitionExpression =  FiltroAparcaBicicletas + " AND " + FiltroAparcaBicicletasArcos;
+
+          } else {
+            aparcabicicletas.definitionExpression = "ARCOS >= " + data.from + " and ARCOS <=" + data.to;
+          }
+
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#rangeAparcaBicicletas").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 50,
+        from: 5,
+        to: 30,
+        step: 1,
+        prefix: "Capacidad: ",
+        grid: true,
+        onChange: function(data) {
+
+          FiltroAparcaBicicletas = "CAPACIDAD >= " + data.from + " and CAPACIDAD <=" + data.to;
+
+          if (FiltroAparcaBicicletasArcos != null) {
+
+            aparcabicicletas.definitionExpression = FiltroAparcaBicicletas + " AND " + FiltroAparcaBicicletasArcos;
+          } else {
+            aparcabicicletas.definitionExpression = "CAPACIDAD >= " + data.from + " and CAPACIDAD <=" + data.to;
+          }
+
+        }
+      });
+
+    });
+
+    $(function() {
+
+      $("#rangeBaseBicicletas").ionRangeSlider({
+        hide_min_max: true,
+        type: "double",
+        keyboard: true,
+        min: 0,
+        max: 50,
+        from: 5,
+        to: 30,
+        step: 1,
+        prefix: "Anclajes: ",
+        grid: true,
+        onChange: function(data) {
+
+          basesBicicletas.definitionExpression = "ANCLAJES >= " + data.from + " and ANCLAJES <=" + data.to;
+
+        }
+      });
+
+    });
+
+
+    $(document).ready(function() {
+
+      $('#colorpicker').farbtastic('#color');
+      $('#colorpicker').farbtastic('#colorAux');
+      $('#colorpicker2').farbtastic('#color2');
+
+    });
+
+
+
+  });
+</script>
+
+<script type="text/javascript">
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByClassName('message');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByClassName("contenidoListado")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "block";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+
+
+
+
+</html>
